@@ -28,8 +28,8 @@ public class PostService {
         Post post = new Post();
         post.setId(postDTO.getId());
 
-        PostCategory postCategory = postCategoryRepository.findById((long) postDTO.getCategoryId()).orElse(null);
-        Location location = locationRepository.findById((long) postDTO.getLocationId()).orElse(null);
+        PostCategory postCategory = postCategoryRepository.findById(postDTO.getCategoryId()).orElse(null);
+        Location location = locationRepository.findById(postDTO.getLocationId()).orElse(null);
         User user = userRepository.findById(postDTO.getUserId()).orElse(null);
 
         post.setPostCategory(postCategory);
@@ -42,12 +42,12 @@ public class PostService {
         return postRepository.save(post);
     }
 
-    public Post updatePost(int id, PostDTO postDTO) {
+    public Post updatePost(long id, PostDTO postDTO) {
         Post existingPost = postRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 게시글을 찾을 수 없습니다. ID: " + id));
 
-        PostCategory postCategory = postCategoryRepository.findById((long) postDTO.getCategoryId()).orElse(null);
-        Location location = locationRepository.findById((long) postDTO.getLocationId()).orElse(null);
+        PostCategory postCategory = postCategoryRepository.findById(postDTO.getCategoryId()).orElse(null);
+        Location location = locationRepository.findById(postDTO.getLocationId()).orElse(null);
 
         existingPost.setPostCategory(postCategory);
         existingPost.setLocation(location);
@@ -60,7 +60,7 @@ public class PostService {
     }
 
     public boolean deletePost(long id) {
-        Optional<Post> optionalPost = postRepository.findById((int) id);
+        Optional<Post> optionalPost = postRepository.findById(id);
         if (optionalPost.isPresent()) {
             postRepository.delete(optionalPost.get());
             return true;
@@ -74,6 +74,6 @@ public class PostService {
     }
 
     public Optional<Post> findPost(long id) {
-        return postRepository.findById((int) id);
+        return postRepository.findById(id);
     }
 }

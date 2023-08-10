@@ -1,4 +1,4 @@
-package com.example.vanilla.exception;
+package com.vanilla.vanillasns.exception;
 
 public class ResourceNotFoundException extends RuntimeException {
     public ResourceNotFoundException(String message) {

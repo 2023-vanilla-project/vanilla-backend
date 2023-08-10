@@ -1,4 +1,4 @@
-package com.example.vanilla.dto;
+package com.vanilla.vanillasns.dto;
 
 public class FollowingDTO {
 

@@ -1,6 +1,6 @@
-package com.example.vanilla.entity;
+package com.vanilla.vanillasns.entity;
 
-import com.example.vanilla.embeddable.FollowingId;
+import com.vanilla.vanillasns.embeddable.FollowingId;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;

@@ -1,11 +1,8 @@
-package com.example.vanilla.controller;
+package com.vanilla.vanillasns.controlloer;
 
-import com.example.vanilla.dto.FollowerDTO;
-import com.example.vanilla.entity.Follower;
-import com.example.vanilla.entity.User;
-import com.example.vanilla.service.FollowerService;
+import com.vanilla.vanillasns.entity.User;
+import com.vanilla.vanillasns.service.FollowerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

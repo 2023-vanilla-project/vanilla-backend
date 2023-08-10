@@ -1,8 +1,8 @@
-package com.example.vanilla.repository;
+package com.vanilla.vanillasns.repository;
 
-import com.example.vanilla.embeddable.FollowingId;
-import com.example.vanilla.entity.Following;
-import com.example.vanilla.entity.User;
+import com.vanilla.vanillasns.embeddable.FollowingId;
+import com.vanilla.vanillasns.entity.Following;
+import com.vanilla.vanillasns.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

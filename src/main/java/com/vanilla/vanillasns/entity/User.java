@@ -1,30 +1,45 @@
 package com.vanilla.vanillasns.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.vanilla.vanillasns.entity.Follower;
+import com.vanilla.vanillasns.entity.Following;
+
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
-@Table(name="user")
+@Table(name = "user")
 public class User {
-
     @Id
+    @Column(length = 36)
     private String id;
     private String password;
     private String name;
     private Date birthday;
-    private String profileImage;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonBackReference
+    private List<Follower> followers = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonBackReference
+    private List<Following> followings = new ArrayList<>();
 
     public User() {
+
     }
 
-    public User(String id, String password, String name, Date birthday, String profileImage) {
-        this.id = id;
-        this.password = password;
-        this.name = name;
-        this.birthday = birthday;
-        this.profileImage = profileImage;
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", birthday=" + birthday +
+                ", followers=" + followers +
+                ", followings=" + followings +
+                '}';
     }
 
     public String getId() {
@@ -59,22 +74,28 @@ public class User {
         this.birthday = birthday;
     }
 
-    public String getProfileImage() {
-        return profileImage;
+    public List<Follower> getFollowers() {
+        return followers;
     }
 
-    public void setProfileImage(String profileImage) {
-        this.profileImage = profileImage;
+    public void setFollowers(List<Follower> followers) {
+        this.followers = followers;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id='" + id + '\'' +
-                ", password='" + password + '\'' +
-                ", name='" + name + '\'' +
-                ", birthday=" + birthday +
-                ", profileImage='" + profileImage + '\'' +
-                '}';
+    public List<Following> getFollowings() {
+        return followings;
+    }
+
+    public void setFollowings(List<Following> followings) {
+        this.followings = followings;
+    }
+
+    public User(String id, String password, String name, Date birthday, List<Follower> followers, List<Following> followings) {
+        this.id = id;
+        this.password = password;
+        this.name = name;
+        this.birthday = birthday;
+        this.followers = followers;
+        this.followings = followings;
     }
 }

@@ -1,4 +1,4 @@
-package com.example.vanilla.config;
+package com.vanilla.vanillasns.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

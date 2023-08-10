@@ -2,9 +2,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/vanila_sns
+    url: jdbc:mysql://localhost:3306/vanilla_sns
     username: root
-    password: lhj7057
+    password: 1234
 
   # JPA config
   jpa:
@@ -16,4 +16,4 @@ spring:
         format_sql: true
 
 server:
-  port: 8004
+  port: 8001

@@ -1,9 +1,7 @@
 package com.vanilla.vanillasns.controlloer;
 
 import com.vanilla.vanillasns.dto.PostLikeDTO;
-import com.vanilla.vanillasns.entity.Post;
 import com.vanilla.vanillasns.entity.PostLike;
-import com.vanilla.vanillasns.entity.User;
 import com.vanilla.vanillasns.service.PostLikeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

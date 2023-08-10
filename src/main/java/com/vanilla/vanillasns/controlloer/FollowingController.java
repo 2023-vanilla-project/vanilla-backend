@@ -1,10 +1,9 @@
-package com.example.vanilla.controller;
+package com.vanilla.vanillasns.controlloer;
 
-import com.example.vanilla.dto.FollowerDTO;
-import com.example.vanilla.dto.FollowingDTO;
-import com.example.vanilla.entity.Following;
-import com.example.vanilla.entity.User;
-import com.example.vanilla.service.FollowingService;
+import com.vanilla.vanillasns.dto.FollowingDTO;
+import com.vanilla.vanillasns.entity.Following;
+import com.vanilla.vanillasns.entity.User;
+import com.vanilla.vanillasns.service.FollowingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.example.vanilla.embeddable;
+package com.vanilla.vanillasns.embeddable;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;

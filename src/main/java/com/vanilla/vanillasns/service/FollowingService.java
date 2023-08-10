@@ -1,19 +1,17 @@
-package com.example.vanilla.service;
+package com.vanilla.vanillasns.service;
 
-import com.example.vanilla.dto.FollowingDTO;
-import com.example.vanilla.embeddable.FollowingId;
-import com.example.vanilla.entity.Following;
-import com.example.vanilla.entity.User;
-import com.example.vanilla.exception.ResourceNotFoundException;
-import com.example.vanilla.repository.FollowingRepository;
-import com.example.vanilla.repository.UserRepository;
+import com.vanilla.vanillasns.dto.FollowingDTO;
+import com.vanilla.vanillasns.entity.Following;
+import com.vanilla.vanillasns.entity.User;
+import com.vanilla.vanillasns.exception.ResourceNotFoundException;
+import com.vanilla.vanillasns.repository.FollowingRepository;
+import com.vanilla.vanillasns.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @Transactional
